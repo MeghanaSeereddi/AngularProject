@@ -1,0 +1,15 @@
+<div>
+  <h3>Order management system</h3>
+  <input [(ngModel)]="item.name">
+  <input [(ngModel)]="item.price">
+  <input [(ngModel)]="item.quantity">
+  <input type="radio" name="choose" value="Discounted" [(ngModel)]="item.choose">Discounted
+  <input type="radio" name="choose" value="New Arrival" [(ngModel)]="item.choose">New Arrival
+  <button (click)="save()">Evaluate</button>
+  
+  <ol>
+    <li *ngFor = 'let item of orders; let i= index'>{{item.name}}, {{item.price}}, {{item.quantity}}, {{item.choose}} 
+      <button (click)="deleteUser(item, i)">Delete</button>
+    </li>
+  </ol>
+</div>
